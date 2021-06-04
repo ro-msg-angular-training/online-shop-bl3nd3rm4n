@@ -1,0 +1,9 @@
+<nav class="default-border">
+  <button (click)="goBack()" class="default-border">Back</button>
+  <div class="nav-element"><a routerLink="/login" routerLinkActive="active">Login</a></div>
+  <hr class="nav-separator">
+  <div class="nav-element"><a routerLink="/products" routerLinkActive="active">Products</a></div>
+  <button *ngIf="authService.isCustomer()" class="default-border" id="cart-button" routerLink="/cart" routerLinkActive="active">
+    Cart
+  </button>
+</nav>

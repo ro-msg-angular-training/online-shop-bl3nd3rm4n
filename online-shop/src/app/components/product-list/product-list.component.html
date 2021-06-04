@@ -1,0 +1,19 @@
+<div class="product-list">
+  <div class="product-list-container">
+    <button (click)="createNewProduct()" *ngIf="authService.isAdmin()" class="default-border" id="create-button">
+      Create new product
+    </button>
+    <div *ngIf="products" class="divTable default-border">
+      <div class="divTableBody">
+        <div class="divTableRow">
+          <div *ngFor="let property of properties" class="divTableHead">{{property | uppercase}}</div>
+        </div>
+        <div *ngFor="let product of products" class="divTableRow product-list-row">
+          <div class="divTableCell"><a routerLink="/products/{{product.id}}">{{product.name}}</a></div>
+          <div class="divTableCell">{{product['category']}}</div>
+          <div class="divTableCell">{{product['price'] | currency: 'EUR'}}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+.product-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-container {
+  width: 80%;
+}
+
+.product-information {
+  background-color: white;
+}
+
+.property-label {
+  text-align: right;
+}
+
+#save-button, #cancel-button {
+  float: right;
+}
+
+#buttons {
+  display: inline-block;
+  width: 100%;
+}

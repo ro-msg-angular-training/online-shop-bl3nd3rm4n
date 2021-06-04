@@ -1,0 +1,28 @@
+nav {
+  margin-bottom: 50px;
+  list-style-type: none;
+  padding: 0px;
+  overflow: hidden;
+  display: flex;
+  background-color: white;
+}
+
+.nav-element {
+  float: left;
+  padding: 10px;
+
+  margin: auto 0
+}
+
+a {
+  text-decoration: none;
+}
+
+.nav-separator {
+  width: 4px;;
+  margin: 4px;
+}
+
+#cart-button {
+  margin-left: auto;
+}

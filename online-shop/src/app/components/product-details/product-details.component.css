@@ -1,0 +1,38 @@
+.product-details {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-container {
+  width: 80%;
+}
+
+.product-information {
+  background-color: white;
+}
+
+.property-label {
+  text-align: right;
+}
+
+img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.img-container {
+  width: 150px;
+  height: 150px;
+  float: right;
+}
+
+.description {
+  display: inline-block;
+  width: 100%;
+  padding: 20px;
+}
+
+

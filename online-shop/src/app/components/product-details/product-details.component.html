@@ -1,0 +1,26 @@
+<div *ngIf="product" class="product-details">
+  <div class="details-container">
+    <h1>Product: {{product?.name}}</h1>
+    <button (click)="addToCart(product)" *ngIf="authService.isCustomer()" class="default-border">Add to cart</button>
+    <button (click)="edit()" *ngIf="authService.isAdmin()" class="default-border" id="edit-button">Edit</button>
+    <button (click)="delete()" *ngIf="authService.isAdmin()" class="default-border" id="delete-button">Delete</button>
+    <div class="default-border product-information">
+      <div class="divTable properties">
+        <div class="divTableRow">
+          <div class="divTableCell property-label">Name</div>
+          <div class="divTableCell">{{product.name}}</div>
+        </div>
+        <div class="divTableRow">
+          <div class="divTableCell property-label">Category</div>
+          <div class="divTableCell">{{product['category']}}</div>
+        </div>
+        <div class="divTableRow">
+          <div class="divTableCell property-label">Price</div>
+          <div class="divTableCell">{{product['price'] | currency:'RON'}}</div>
+        </div>
+      </div>
+      <div class="img-container"><img src="{{product.image}}"></div>
+      <div class="description">{{product['description']}}</div>
+    </div>
+  </div>
+</div>

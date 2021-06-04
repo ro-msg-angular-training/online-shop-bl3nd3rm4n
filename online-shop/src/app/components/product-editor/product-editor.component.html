@@ -1,0 +1,76 @@
+<div *ngIf="product || isAddMode" class="product-details">
+  <div class="details-container">
+    <h1 *ngIf="!isAddMode">Edit Product: {{originalProduct?.name}}</h1>
+    <h1 *ngIf="isAddMode">New Product</h1>
+    <form #productForm="ngForm" (ngSubmit)="submit()" class="form-group">
+      <div id="buttons">
+        <button [disabled]="!productForm.valid" class="default-border" id="save-button" type="submit">Save</button>
+        <button (click)="cancel()" class="default-border" id="cancel-button">Cancel</button>
+      </div>
+      <div class="default-border product-information">
+        <div class="divTable">
+          <div class="divTableRow">
+            <div class="divTableCell property-label">Name:</div>
+            <div class="divTableCell">
+              <input #name="ngModel"
+                     [(ngModel)]="product.name"
+                     class="default-border"
+                     minlength="3"
+                     name="name"
+                     required/>
+              <div *ngIf="name?.errors?.minlength" class="errorMessage">Name must be at least 3 characters long.</div>
+            </div>
+          </div>
+          <div class="divTableRow">
+            <div class="divTableCell property-label">Category:</div>
+            <div class="divTableCell">
+              <input #category="ngModel"
+                     [(ngModel)]="product.category"
+                     class="default-border"
+                     minlength="3"
+                     name="category"
+                     required/>
+              <div *ngIf="category?.errors?.minlength" class="errorMessage">Category must be at least 3 characters long.</div>
+            </div>
+
+          </div>
+          <div class="divTableRow">
+            <div class="divTableCell property-label">Price:</div>
+            <div class="divTableCell">
+              <input #price="ngModel"
+                     [(ngModel)]="product.price"
+                     class="default-border"
+                     name="price"
+                     pattern="[0-9]+(.[0-9]{1,3})?"
+                     required
+                     type="number"/>
+              <div *ngIf="price?.errors?.pattern" class="errorMessage">Price must be a positive number with 3 or less decimal
+                places
+              </div>
+            </div>
+          </div>
+          <div class="divTableRow">
+            <div class="divTableCell property-label">Image Source:</div>
+            <div class="divTableCell">
+              <input #image="ngModel"
+                     [(ngModel)]="product.image"
+                     class="default-border"
+                     name="image"/>
+            </div>
+          </div>
+          <div class="divTableRow">
+            <div class="divTableCell property-label">Description:</div>
+            <div class="divTableCell">
+              <textarea #description="ngModel"
+                        [(ngModel)]="product.description"
+                        class="default-border"
+                        cols="80"
+                        name="description"
+                        rows="3"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

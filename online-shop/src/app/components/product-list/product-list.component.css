@@ -1,0 +1,21 @@
+.product-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-list-container {
+}
+
+.product-list-row:hover {
+  background-color: lightgrey;
+  border: 0
+}
+
+#create-button {
+  float: right
+}
+
+.divTable {
+  width: 100%;
+}

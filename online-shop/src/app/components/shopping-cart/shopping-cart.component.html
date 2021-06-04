@@ -1,0 +1,24 @@
+<div class="shopping-cart">
+  <div class="shopping-cart-container">
+    <button (click)="checkout()" class="default-border">Checkout</button>
+    <div *ngIf="productList" class="divTable default-border">
+      <div class="divTableBody">
+        <div class="divTableRow">
+          <div *ngFor="let property of properties" class="divTableHead">{{property | uppercase}}</div>
+          <div class="divTableHead">Quantity</div>
+        </div>
+        <div *ngFor="let product of productList" class="divTableRow product-list-row">
+          <div class="divTableCell"><a routerLink="/products/{{product.id}}">{{product.name}}</a></div>
+          <div class="divTableCell">{{product['category']}}</div>
+          <div class="divTableCell">{{product['price'] | currency: 'RON'}}</div>
+          <div class="divTableCell">
+            <input (ngModelChange)="updateQuantity(product,$event)" [ngModel]="productIdQuantityMap.get(product.id)"
+                   class="quantity-input default-border"
+                   max="99" min="0" type="number">
+          </div>
+          <button (click)="remove(product)" class="default-border">Remove</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
