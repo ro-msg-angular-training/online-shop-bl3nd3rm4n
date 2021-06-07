@@ -46,30 +46,30 @@ textarea:focus, textarea:hover, input:focus, input:hover, button:hover {
 }
 
 
-.divTable {
+.table {
   display: inline-block;
   background-color: white;
 }
 
-.divTableRow {
+.tableRow {
   display: table-row;
 }
 
-.divTableHeading {
+.tableHeading {
   display: table-header-group;
 }
 
-.divTableCell, .divTableHead {
+.tableCell, .tableHead {
   display: table-cell;
   padding: 10px 20px;
 }
 
-.divTableHeading {
+.tableHeading {
   display: table-header-group;
   font-weight: bold;
 }
 
-.divTableBody {
+.tableBody {
   display: table-row-group;
 }
 

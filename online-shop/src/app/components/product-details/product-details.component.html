@@ -5,20 +5,20 @@
     <button (click)="edit()" *ngIf="authService.isAdmin()" class="default-border" id="edit-button">Edit</button>
     <button (click)="delete()" *ngIf="authService.isAdmin()" class="default-border" id="delete-button">Delete</button>
     <div class="default-border product-information">
-      <div class="divTable properties">
-        <div class="divTableRow">
-          <div class="divTableCell property-label">Name</div>
-          <div class="divTableCell">{{product.name}}</div>
-        </div>
-        <div class="divTableRow">
-          <div class="divTableCell property-label">Category</div>
-          <div class="divTableCell">{{product['category']}}</div>
-        </div>
-        <div class="divTableRow">
-          <div class="divTableCell property-label">Price</div>
-          <div class="divTableCell">{{product['price'] | currency:'RON'}}</div>
-        </div>
-      </div>
+      <table class="table properties">
+        <tr class="tableRow">
+          <td class="tableCell property-label">Name</td>
+          <td class="tableCell">{{product.name}}</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell property-label">Category</td>
+          <td class="tableCell">{{product['category']}}</td>
+        </tr>
+        <tr class="tableRow">
+          <td class="tableCell property-label">Price</td>
+          <td class="tableCell">{{product['price'] | currency:'RON'}}</td>
+        </tr>
+      </table>
       <div class="img-container"><img src="{{product.image}}"></div>
       <div class="description">{{product['description']}}</div>
     </div>
