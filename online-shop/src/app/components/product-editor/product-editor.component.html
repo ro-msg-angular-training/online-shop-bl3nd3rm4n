@@ -1,7 +1,12 @@
 <div *ngIf="product || isAddMode" class="product-details">
   <div class="details-container">
-    <h1 *ngIf="!isAddMode">Edit Product: {{originalProduct?.name}}</h1>
-    <h1 *ngIf="isAddMode">New Product</h1>
+    <ng-container *ngIf="isAddMode then add_mode;else edit_mode"></ng-container>
+    <ng-template #add_mode>
+      <h1>New Product</h1>
+    </ng-template>
+    <ng-template #edit_mode>
+      <h1>Edit Product: {{originalProduct?.name}}</h1>
+    </ng-template>
     <form #productForm="ngForm" (ngSubmit)="submit()" class="form-group">
       <div id="buttons">
         <button [disabled]="!productForm.valid" class="default-border" id="save-button" type="submit">Save</button>

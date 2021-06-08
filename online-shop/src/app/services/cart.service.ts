@@ -29,16 +29,14 @@ export class CartService {
     return of(this.productIdQuantityMap);
   }
 
-  updateQuantity(id: number, quantity: number): Observable<Map<number, number>> {
+  updateQuantity(id: number, quantity: number): void {
     this.productIdQuantityMap.set(id, quantity);
     this.saveToLocalStorage();
-    return of(this.productIdQuantityMap);
   }
 
-  add(id: number): Observable<Map<number, number>> {
+  add(id: number): void {
     this.productIdQuantityMap.set(id, this.productIdQuantityMap.has(id) ? this.productIdQuantityMap.get(id)! + 1 : 1);
     this.saveToLocalStorage();
-    return of(this.productIdQuantityMap);
   }
 
   emptyCart(): Observable<Map<number, number>> {

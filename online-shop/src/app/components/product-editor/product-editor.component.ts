@@ -9,7 +9,7 @@ import {Product} from '../../models/product';
   styleUrls: ['./product-editor.component.css']
 })
 export class ProductEditorComponent implements OnInit {
-  id!: string;
+  id!: number;
   isAddMode!: boolean;
   originalProduct!: Product;
   product!: Product;
@@ -22,17 +22,16 @@ export class ProductEditorComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.id = this.route.snapshot.params['id'];
+    this.id = Number(this.route.snapshot.params['id']);
     this.isAddMode = !this.id;
     if (!this.isAddMode) {
-      this.getProduct();
+      this.getProduct(this.id);
     } else {
       this.product = <Product>{};
     }
   }
 
-  getProduct(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+  getProduct(id: number): void {
     this.productService.getProduct(id)
       .subscribe(product => {
           this.originalProduct = JSON.parse(JSON.stringify(product));

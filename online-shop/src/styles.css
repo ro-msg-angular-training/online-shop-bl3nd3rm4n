@@ -49,6 +49,7 @@ textarea:focus, textarea:hover, input:focus, input:hover, button:hover {
 .table {
   display: inline-block;
   background-color: white;
+  border-spacing: 0;
 }
 
 .tableRow {
@@ -67,10 +68,6 @@ textarea:focus, textarea:hover, input:focus, input:hover, button:hover {
 .tableHeading {
   display: table-header-group;
   font-weight: bold;
-}
-
-.tableBody {
-  display: table-row-group;
 }
 
 button:disabled {

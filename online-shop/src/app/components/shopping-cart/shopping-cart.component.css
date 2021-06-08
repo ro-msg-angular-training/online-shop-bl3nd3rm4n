@@ -4,9 +4,6 @@
   justify-content: center;
 }
 
-.shopping-cart-container {
-}
-
 .product-list-row:hover {
   background-color: lightgrey;
   border: 0
