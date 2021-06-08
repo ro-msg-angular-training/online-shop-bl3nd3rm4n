@@ -1,0 +1,76 @@
+@media screen and (max-width: 600px) {
+  html {
+    min-width: 600px
+  }
+}
+
+body {
+  background-color: lightgrey;
+}
+
+* {
+  font-family: Bahnschrift, sans-serif;
+  box-sizing: border-box;
+}
+
+input {
+  border-radius: 10px;
+}
+
+hr {
+  border: black solid 2px;
+  background-color: black;
+  border-radius: 2px;
+  margin: auto;
+}
+
+button {
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-weight: bold;
+  text-align: center;
+  cursor: pointer;
+  margin: 4px
+}
+
+.default-border {
+  border: 4px solid black;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+textarea:focus, textarea:hover, input:focus, input:hover, button:hover {
+  outline: none;
+  border-color: red;
+}
+
+
+.table {
+  display: inline-block;
+  background-color: white;
+  border-spacing: 0;
+}
+
+.tableRow {
+  display: table-row;
+}
+
+.tableHeading {
+  display: table-header-group;
+}
+
+.tableCell, .tableHead {
+  display: table-cell;
+  padding: 10px 20px;
+}
+
+.tableHeading {
+  display: table-header-group;
+  font-weight: bold;
+}
+
+button:disabled {
+  background-color: grey;
+  border-color: grey;
+}

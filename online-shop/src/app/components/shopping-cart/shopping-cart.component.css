@@ -1,0 +1,22 @@
+.shopping-cart {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.product-list-row:hover {
+  background-color: lightgrey;
+  border: 0
+}
+
+#create-button {
+  float: right
+}
+
+.table {
+  width: 100%;
+}
+
+.quantity-input {
+  width: 100px;
+}
